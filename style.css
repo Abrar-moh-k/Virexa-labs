@@ -455,3 +455,178 @@ footer {
     
     .cta-box { padding: 40px 20px; }
 }
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   CASE STUDIES PAGE - Detailed Styles
+   ========================================= */
+
+/* الهيدر */
+.page-header {
+    padding: 150px 0 80px;
+    text-align: center;
+    background: radial-gradient(circle at 50% 50%, rgba(138, 3, 3, 0.15), transparent 70%);
+}
+
+.page-header h1 { font-size: 3rem; margin-bottom: 10px; }
+.page-header p { font-size: 1.2rem; color: var(--text-gray); }
+
+.all-cases { padding: 50px 0 100px; }
+
+/* الحالة الكاملة (case-full) */
+.case-full {
+    background: var(--bg-card);
+    padding: 50px;
+    margin-bottom: 80px;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 8px;
+}
+
+.case-full .tag {
+    font-size: 0.8rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid var(--gold);
+    padding: 5px 15px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+/* الأقسام (Problem, Solution, Results) */
+.case-section { margin-bottom: 40px; }
+
+.case-section h4 {
+    color: var(--text-white);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.case-section h4 i { color: var(--crimson-light); }
+
+.case-section p { font-size: 1.1rem; line-height: 1.8; }
+
+/* قائمة الحل */
+.solution-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.solution-list li {
+    color: var(--text-gray);
+    padding-left: 25px;
+    position: relative;
+    font-size: 1rem;
+}
+
+.solution-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: bold;
+}
+
+/* النتائج */
+.case-section.results {
+    background: rgba(0,0,0,0.3);
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 3px solid var(--gold);
+}
+
+.results-grid {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.result-box {
+    text-align: center;
+    padding: 20px;
+}
+
+.result-box .number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.result-box .label {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* CTA Box */
+.cta-section { padding: 80px 0; text-align: center; }
+
+.cta-box {
+    background: var(--bg-card);
+    padding: 60px 40px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-box h2 { margin-bottom: 30px; }
+
+/* الفوتر */
+footer {
+    padding: 50px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    background-color: var(--bg-black);
+    text-align: center;
+}
+
+.footer-content { display: flex; flex-direction: column; gap: 20px; }
+.footer-logo { font-size: 1.5rem; font-weight: 900; color: var(--text-white); font-family: var(--font-heading); }
+.copyright { color: var(--text-muted); font-size: 0.8rem; }
+
+/* الجوال */
+@media (max-width: 768px) {
+    .page-header h1 { font-size: 2rem; }
+    .case-full { padding: 25px; }
+    .solution-list { grid-template-columns: 1fr; }
+    .results-grid { flex-direction: column; gap: 30px; }
+    .result-box .number { font-size: 2.5rem; }
+}
+
+
+/* صورة الـ Case Study */
+.case-showcase {
+    margin: 30px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.case-showcase img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.case-full h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
