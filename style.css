@@ -1,0 +1,457 @@
+/* =========================================
+   VIREXA LAB - Luxury Conversion System
+   (Black x Crimson x Gold)
+   ========================================= */
+
+/* 1. Variables & Reset */
+:root {
+    /* الألوان الأساسية */
+    --bg-black: #0D0D0D;
+    --bg-dark: #141414;
+    --bg-card: #1A1A1A;
+    
+    /* النصوص */
+    --text-white: #FFFFFF;
+    --text-gray: #B3B3B3;
+    --text-muted: #666666;
+    
+    /* accents */
+    --gold: #D4AF37;
+    --gold-hover: #F4CF57;
+    --crimson: #8A0303;
+    --crimson-light: #B31313;
+    
+    /* الخطوط */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* المسافات */
+    --spacing-section: 100px;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: var(--text-white);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s ease; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--text-white);
+}
+
+h1 { font-size: 3.5rem; margin-bottom: 1.5rem; }
+h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+p { color: var(--text-gray); margin-bottom: 1rem; }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--gold);
+    color: var(--bg-black);
+    border: 1px solid var(--gold);
+}
+
+.btn-primary:hover {
+    background-color: var(--gold-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-white);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.btn-secondary:hover {
+    border-color: var(--text-white);
+    background-color: rgba(255,255,255,0.05);
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    background: rgba(13, 13, 13, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: var(--text-white);
+}
+
+.logo .dot { color: var(--crimson); }
+
+.nav-links { display: flex; gap: 30px; align-items: center; }
+
+.nav-links a {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+.nav-links a:hover { color: var(--text-white); }
+
+.btn-nav {
+    border: 1px solid var(--gold) !important;
+    color: var(--gold) !important;
+    padding: 8px 20px !important;
+    font-size: 0.75rem !important;
+}
+
+.btn-nav:hover {
+    background: var(--gold) !important;
+    color: var(--bg-black) !important;
+}
+
+.menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 80px;
+    background: radial-gradient(circle at 85% 15%, rgba(138, 3, 3, 0.2) 0%, transparent 40%);
+}
+
+.hero-content { max-width: 800px; }
+
+.hero h1 .highlight {
+    color: #FFFFFF; /* اجعل النص أبيض عادي */
+    /* يمكنك حذف التأثير gradient تماماً إذا كان يسبب مشاكل */
+}
+
+.hero-btns { margin-top: 2.5rem; display: flex; gap: 15px; }
+
+/* Stats Section */
+.stats {
+    padding: 60px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    background-color: var(--bg-dark);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    gap: 20px;
+}
+
+.stat-item h3 {
+    font-size: 3.5rem;
+    color: var(--gold);
+    margin-bottom: 5px;
+    font-family: var(--font-heading);
+}
+
+.stat-item p {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 0;
+    color: var(--text-gray);
+}
+
+/* Services Section */
+.services { padding: var(--spacing-section) 0; }
+
+.section-header { margin-bottom: 60px; text-align: center; }
+
+.subtitle {
+    color: var(--crimson-light);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--bg-card);
+    padding: 40px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 2px; height: 0;
+    background: var(--crimson);
+    transition: height 0.3s ease;
+}
+
+.service-card:hover::before { height: 100%; }
+
+.service-card i {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 25px;
+}
+
+/* Case Studies */
+.case-studies {
+    padding: var(--spacing-section) 0;
+    background-color: var(--bg-dark);
+}
+
+.case-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+}
+
+.case-card {
+    background: var(--bg-black);
+    border: 1px solid rgba(255,255,255,0.05);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.case-card:hover { border-color: var(--text-gray); }
+
+.case-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    transition: 0.5s ease;
+}
+
+.case-card:hover .case-image { transform: scale(1.05); }
+
+.case-content { padding: 30px; }
+
+.tag {
+    font-size: 0.7rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid var(--gold);
+    padding: 4px 10px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.case-stats {
+    display: flex;
+    gap: 30px;
+    margin: 25px 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.case-stats div strong {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--text-white);
+    font-family: var(--font-heading);
+}
+
+.case-stats div span {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+}
+
+.case-content a {
+    color: var(--gold);
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.case-content a:hover { gap: 10px; }
+
+/* Process */
+.process { padding: var(--spacing-section) 0; }
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+}
+
+.process-steps::before {
+    content: '';
+    position: absolute;
+    top: 35px;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    z-index: 0;
+}
+
+.step {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    background: var(--bg-black);
+    padding: 0 10px;
+}
+
+.step-number {
+    width: 70px;
+    height: 70px;
+    border: 1px solid var(--crimson-light);
+    color: var(--crimson-light);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    background: var(--bg-black);
+}
+
+/* About */
+.about {
+    padding: var(--spacing-section) 0;
+    background: linear-gradient(to right, var(--bg-black), var(--bg-dark));
+    text-align: center;
+}
+
+.about-content { max-width: 700px; margin: 0 auto; }
+.about p { font-size: 1.1rem; line-height: 1.8; }
+
+/* CTA Section */
+.cta-section { padding: var(--spacing-section) 0; text-align: center; }
+
+.cta-box {
+    background: var(--bg-card);
+    padding: 60px 40px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); /* optional texture */
+}
+
+.cta-box::before {
+    content: 'Only 3 Spots Left This Month';
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--crimson);
+    color: white;
+    padding: 5px 15px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Footer */
+footer {
+    padding: 50px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    background-color: var(--bg-black);
+    text-align: center;
+}
+
+.footer-content { display: flex; flex-direction: column; gap: 20px; }
+
+.footer-links { display: flex; gap: 20px; justify-content: center; }
+
+.footer-links a { color: var(--text-gray); font-size: 0.9rem; }
+.footer-links a:hover { color: var(--gold); }
+
+.copyright { color: var(--text-muted); font-size: 0.8rem; }
+
+/* Responsive (Mobile) */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    
+    .nav-links { display: none; }
+    .menu-toggle { display: block; color: white; }
+    
+    .hero { height: auto; padding: 120px 0 80px; text-align: center; }
+    .hero-btns { flex-direction: column; width: 100%; }
+    .btn { width: 100%; text-align: center; }
+    
+    .stats-grid { grid-template-columns: 1fr; gap: 40px; }
+    .process-steps { grid-template-columns: 1fr; gap: 40px; }
+    .process-steps::before { display: none; }
+    
+    .case-grid { grid-template-columns: 1fr; }
+    
+    .cta-box { padding: 40px 20px; }
+}
